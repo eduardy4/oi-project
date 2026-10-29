@@ -92,11 +92,17 @@ function Index() {
         .pet-faq details { background:white; border:1px solid #e9eee4; border-radius:16px; padding:18px 20px; }
         .pet-faq summary { cursor:pointer; font-weight:800; }
         .pet-faq details p { color:#6d7a70; line-height:1.7; font-size:14px; margin-bottom:0; }
+        .pet-location-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:28px; align-items:stretch; }
+        .pet-location-info { background:#f2f7ec; border:1px solid #e5eddd; border-radius:24px; padding:30px; display:flex; flex-direction:column; align-items:flex-start; }
+        .pet-location-icon { display:grid; place-items:center; width:54px; height:54px; background:#dcefcf; border-radius:17px; font-size:27px; margin-bottom:18px; }
+        .pet-location-info h3 { font-size:25px; line-height:1.2; margin:0 0 12px; }
+        .pet-location-info p { color:#647368; font-size:14px; line-height:1.8; margin:0 0 22px; }
+        .pet-map { min-height:350px; border:0; border-radius:24px; width:100%; height:100%; display:block; background:#edf3e8; }
         .pet-footer { background:#f2f6ec; padding:30px 0; }
         .pet-footer-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; color:#69786c; font-size:13px; }
         .pet-footer p { margin:6px 0 0; }
         .pet-footer a { color:#34734a; text-decoration:none; font-weight:800; }
-        @media(max-width:850px) { .pet-links { gap:14px; } .pet-links a:not(.pet-btn) { display:none; } .pet-hero-grid { grid-template-columns:1fr; gap:15px; padding:52px 0 48px; } .pet-hero-art { min-height:340px; } .pet-art-circle { width:min(82%,370px); } .pet-cards { grid-template-columns:repeat(2,1fr); } .pet-about { grid-template-columns:1fr; gap:30px; } .pet-about-art { min-height:270px; } }
+        @media(max-width:850px) { .pet-location-grid { grid-template-columns:1fr; } .pet-map { min-height:320px; } .pet-links { gap:14px; } .pet-links a:not(.pet-btn) { display:none; } .pet-hero-grid { grid-template-columns:1fr; gap:15px; padding:52px 0 48px; } .pet-hero-art { min-height:340px; } .pet-art-circle { width:min(82%,370px); } .pet-cards { grid-template-columns:repeat(2,1fr); } .pet-about { grid-template-columns:1fr; gap:30px; } .pet-about-art { min-height:270px; } }
         /* Oculta o selo/atalhos do Lovable na página pública, quando presentes. */
         a[href*="lovable.dev"],
         iframe[src*="lovable.dev"],
@@ -117,7 +123,7 @@ function Index() {
           <span className="pet-brand-mark">🐾</span><span>Petshop <span style={{ color: "#39804e" }}>Pet</span> Mania</span>
         </a>
         <nav className="pet-links" aria-label="Navegação principal">
-          <a href="#servicos">Serviços</a><a href="#loja">Loja pet</a><a href="#sobre">Sobre nós</a><a href="#duvidas">Dúvidas</a>
+          <a href="#servicos">Serviços</a><a href="#loja">Loja pet</a><a href="#sobre">Sobre nós</a><a href="#localizacao">Localização</a><a href="#duvidas">Dúvidas</a>
         </nav>
         <a className="pet-btn" href={whatsappLink("Olá! Quero conhecer os produtos e serviços da Petshop Pet Mania.")} target="_blank" rel="noreferrer">Fale com a gente <span aria-hidden="true">↗</span></a>
       </header>
@@ -179,6 +185,22 @@ function Index() {
             <details><summary>Como posso saber quais serviços estão disponíveis?</summary><p>Entre em contato com nossa equipe para confirmar os serviços, horários e disponibilidade.</p></details>
             <details><summary>Preciso agendar antes de visitar?</summary><p>Recomendamos falar com a equipe antes da visita para combinar o melhor horário para você e seu pet.</p></details>
             <details><summary>Posso perguntar sobre produtos para meu pet?</summary><p>Claro! Conte um pouco sobre seu companheiro e nossa equipe poderá orientar você sobre as opções disponíveis.</p></details>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="pet-section pet-section-soft" id="localizacao">
+        <div className="pet-wrap">
+          <div className="pet-center"><span className="pet-eyebrow">Venha nos visitar</span><h2>Estamos pertinho de você</h2><p>Confira nossa localização no mapa e trace sua rota até a Petshop Pet Mania.</p></div>
+          <div className="pet-location-grid">
+            <div className="pet-location-info">
+              <div className="pet-location-icon" aria-hidden="true">📍</div>
+              <h3>Encontre a Petshop Pet Mania</h3>
+              <p>Rua Cuiabá, 43 - Brasil, Vitória da Conquista - BA, 45051-370, Brasil</p>
+              <a className="pet-btn" href="https://www.google.com/maps/dir/?api=1&destination=Rua%20Cuiab%C3%A1%2C%2043%20-%20Brasil%2C%20Vit%C3%B3ria%20da%20Conquista%20-%20BA%2C%2045051-370%2C%20Brasil" target="_blank" rel="noreferrer">Como chegar <span aria-hidden="true">↗</span></a>
+            </div>
+            <iframe className="pet-map" title="Mapa da localização da Petshop Pet Mania" src="https://www.google.com/maps?q=Rua%20Cuiab%C3%A1%2C%2043%20-%20Brasil%2C%20Vit%C3%B3ria%20da%20Conquista%20-%20BA%2C%2045051-370%2C%20Brasil&output=embed" loading="lazy" allowFullScreen />
           </div>
         </div>
       </section>
