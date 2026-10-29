@@ -137,7 +137,7 @@ function Index() {
       <section className="pet-section pet-section-soft" id="loja">
         <div className="pet-wrap">
           <div className="pet-center"><span className="pet-eyebrow">Cantinho pet</span><h2>Pequenos mimos, grandes alegrias</h2><p>Uma seleção de itens para cuidar, brincar e compartilhar bons momentos com seu companheiro.</p></div>
-          <div className="pet-products">{products.map((product) => <article className="pet-product" key={product.name}><div className="pet-product-art" aria-hidden="true">{product.emoji}</div><div className="pet-product-info"><h3>{product.name}</h3><p>{product.category}</p><a className="pet-btn" style={{ marginTop: 16 }} href="#contato">Consultar opções <span aria-hidden="true">→</span></a></div></article>)}</div>
+          <div className="pet-products">{products.map((product) => <article className="pet-product" key={product.name}><div className="pet-product-art" aria-hidden="true">{product.emoji}</div><div className="pet-product-info"><h3>{product.name}</h3><p>{product.category}</p><a className="pet-btn" style={{ marginTop: 16 }} href={whatsappLink(`Olá! Tenho interesse em ${product.name}. Pode me passar as opções e os valores?`)} target="_blank" rel="noreferrer">Consultar no WhatsApp <span aria-hidden="true">↗</span></a></div></article>)}</div>
         </div>
       </section>
 
