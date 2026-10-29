@@ -12,10 +12,14 @@ const services = [
 ];
 
 const products = [
-  { emoji: "🦴", name: "Petiscos e snacks", category: "Para recompensar com carinho" },
-  { emoji: "🎾", name: "Brinquedos divertidos", category: "Mais movimento e diversão" },
-  { emoji: "🧴", name: "Higiene e cuidado", category: "Bem-estar todos os dias" },
+  { emoji: "🦴", name: "Petiscos e snacks", category: "Para recompensar com carinho", price: "Consulte opções" },
+  { emoji: "🎾", name: "Brinquedos divertidos", category: "Mais movimento e diversão", price: "Consulte opções" },
+  { emoji: "🧴", name: "Higiene e cuidado", category: "Bem-estar todos os dias", price: "Consulte opções" },
 ];
+
+// Número fictício para demonstração. Substituir pelo WhatsApp comercial antes de publicar.
+const whatsappNumber = "5511999999999";
+const whatsappLink = (message: string) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
 function Index() {
   return (
@@ -103,7 +107,7 @@ function Index() {
         <nav className="pet-links" aria-label="Navegação principal">
           <a href="#servicos">Serviços</a><a href="#loja">Loja pet</a><a href="#sobre">Sobre nós</a><a href="#duvidas">Dúvidas</a>
         </nav>
-        <a className="pet-btn" href="#contato">Fale com a gente <span aria-hidden="true">↗</span></a>
+        <a className="pet-btn" href={whatsappLink("Olá! Quero conhecer os produtos e serviços da Pata & Companhia.")} target="_blank" rel="noreferrer">Fale com a gente <span aria-hidden="true">↗</span></a>
       </header>
 
       <section className="pet-hero" id="inicio">
@@ -140,7 +144,7 @@ function Index() {
       <section className="pet-section" id="sobre">
         <div className="pet-wrap pet-about">
           <div className="pet-about-art" aria-hidden="true">🐕‍🦺</div>
-          <div><span className="pet-eyebrow">Nossa essência</span><h2>Mais que cuidado. Uma relação de confiança.</h2><p>A Pata & Companhia nasceu da ideia de que cada pet merece atenção, respeito e muito amor. Queremos que você se sinta acolhido e que seu companheiro receba um cuidado feito com carinho.</p><ul className="pet-checks"><li><span>✓</span> Atendimento acolhedor para pets e tutores</li><li><span>✓</span> Atenção ao conforto e ao bem-estar</li><li><span>✓</span> Orientações claras para o dia a dia</li></ul><a className="pet-btn" href="#contato">Vamos conversar <span aria-hidden="true">→</span></a></div>
+          <div><span className="pet-eyebrow">Nossa essência</span><h2>Mais que cuidado. Uma relação de confiança.</h2><p>A Pata & Companhia nasceu da ideia de que cada pet merece atenção, respeito e muito amor. Queremos que você se sinta acolhido e que seu companheiro receba um cuidado feito com carinho.</p><ul className="pet-checks"><li><span>✓</span> Atendimento acolhedor para pets e tutores</li><li><span>✓</span> Atenção ao conforto e ao bem-estar</li><li><span>✓</span> Orientações claras para o dia a dia</li></ul><a className="pet-btn" href={whatsappLink("Olá! Gostaria de saber mais sobre a Pata & Companhia.")} target="_blank" rel="noreferrer">Vamos conversar <span aria-hidden="true">↗</span></a></div>
         </div>
       </section>
 
@@ -149,9 +153,9 @@ function Index() {
         <div className="pet-wrap">
           <div className="pet-center"><span className="pet-eyebrow">Encontre o que precisa</span><h2>O cuidado ideal começa aqui</h2><p>Escolha por onde quer começar e fale com a equipe para conhecer as opções disponíveis para seu companheiro.</p></div>
           <div className="pet-offer-grid">
-            <article className="pet-offer"><span className="pet-offer-tag">Bem-estar</span><h3>Cuidados para o dia a dia</h3><p>Converse com a equipe sobre higiene, rotina de cuidados e serviços que combinam com as necessidades do seu pet.</p><a className="pet-btn" href="#contato">Consultar serviços →</a></article>
-            <article className="pet-offer"><span className="pet-offer-tag">Diversão</span><h3>Produtos e acessórios</h3><p>Descubra opções de brinquedos, petiscos e acessórios para deixar a rotina mais divertida e confortável.</p><a className="pet-btn" href="#loja">Ver categorias →</a></article>
-            <article className="pet-offer"><span className="pet-offer-tag">Atendimento</span><h3>Ajuda para escolher</h3><p>Não sabe por onde começar? Conte o que seu pet precisa e tire suas dúvidas antes de decidir.</p><a className="pet-btn" href="#contato">Falar com a equipe →</a></article>
+            <article className="pet-offer"><span className="pet-offer-tag">Bem-estar</span><h3>Cuidados para o dia a dia</h3><p>Converse com a equipe sobre higiene, rotina de cuidados e serviços que combinam com as necessidades do seu pet.</p><a className="pet-btn" href={whatsappLink("Olá! Quero consultar os serviços de banho e tosa e os valores.")} target="_blank" rel="noreferrer">Consultar serviços →</a></article>
+            <article className="pet-offer"><span className="pet-offer-tag">Diversão</span><h3>Produtos e acessórios</h3><p>Descubra opções de brinquedos, petiscos e acessórios para deixar a rotina mais divertida e confortável.</p><a className="pet-btn" href={whatsappLink("Olá! Quero conhecer os produtos para pets disponíveis.")} target="_blank" rel="noreferrer">Ver categorias →</a></article>
+            <article className="pet-offer"><span className="pet-offer-tag">Atendimento</span><h3>Ajuda para escolher</h3><p>Não sabe por onde começar? Conte o que seu pet precisa e tire suas dúvidas antes de decidir.</p><a className="pet-btn" href={whatsappLink("Olá! Preciso de ajuda para escolher produtos ou serviços para meu pet.")} target="_blank" rel="noreferrer">Falar com a equipe →</a></article>
           </div>
         </div>
       </section>
@@ -169,13 +173,13 @@ function Index() {
 
       <section className="pet-cta" id="contato">
         <div className="pet-wrap pet-cta-box">
-          <div><h2>Pronto para cuidar ainda melhor do seu melhor amigo?</h2><p>Consulte opções, disponibilidade e valores com a nossa equipe.</p></div>
-          <a className="pet-btn" href="mailto:contato@pataecompanhia.com?subject=Ol%C3%A1%2C%20quero%20saber%20mais">Quero saber mais <span aria-hidden="true">↗</span></a>
+          <div><h2>Pronto para cuidar ainda melhor do seu melhor amigo?</h2><p>Consulte opções, disponibilidade e valores pelo WhatsApp. <strong style={{ color: "#f6d7a7" }}>Contato fictício para demonstração.</strong></p></div>
+          <a className="pet-btn" href={whatsappLink("Olá! Quero saber mais sobre os produtos e serviços da Pata & Companhia.")} target="_blank" rel="noreferrer">Chamar no WhatsApp <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
       <footer className="pet-footer">
-        <div className="pet-wrap pet-footer-inner"><div><a className="pet-brand" href="#inicio"><span className="pet-brand-mark">🐾</span><span>Pata <span style={{ color: "#39804e" }}>&</span> Companhia</span></a><p>Feito com carinho para os melhores amigos.</p></div><span>© {new Date().getFullYear()} Pata & Companhia. Projeto demonstrativo.</span></div>
+        <div className="pet-wrap pet-footer-inner"><div><a className="pet-brand" href="#inicio"><span className="pet-brand-mark">🐾</span><span>Pata <span style={{ color: "#39804e" }}>&</span> Companhia</span></a><p>Feito com carinho para os melhores amigos.</p></div><span>© {new Date().getFullYear()} Pata & Companhia. Projeto demonstrativo · WhatsApp fictício.</span></div>
       </footer>
     </main>
   );
