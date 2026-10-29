@@ -97,17 +97,29 @@ function Index() {
         .pet-footer p { margin:6px 0 0; }
         .pet-footer a { color:#34734a; text-decoration:none; font-weight:800; }
         @media(max-width:850px) { .pet-links { gap:14px; } .pet-links a:not(.pet-btn) { display:none; } .pet-hero-grid { grid-template-columns:1fr; gap:15px; padding:52px 0 48px; } .pet-hero-art { min-height:340px; } .pet-art-circle { width:min(82%,370px); } .pet-cards { grid-template-columns:repeat(2,1fr); } .pet-about { grid-template-columns:1fr; gap:30px; } .pet-about-art { min-height:270px; } }
+        /* Oculta o selo/atalhos do Lovable na página pública, quando presentes. */
+        a[href*="lovable.dev"],
+        iframe[src*="lovable.dev"],
+        div[style*="Edit with Lovable"],
+        lovable-badge {
+          display: none !important;
+          opacity: 0 !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
+          position: absolute !important;
+          z-index: -9999 !important;
+        }
         @media(max-width:560px) { .pet-wrap { width:calc(100% - 30px); } .pet-nav { min-height:68px; } .pet-brand { font-size:18px; } .pet-brand-mark { width:37px;height:37px; } .pet-nav > .pet-btn { padding:11px 13px; font-size:12px; } .pet-hero h1 { font-size:43px; } .pet-lead { font-size:15px; } .pet-hero-art { min-height:300px; } .pet-float-one { left:0;top:35px; } .pet-float-two { right:0;bottom:32px; } .pet-section { padding:60px 0; } .pet-cards,.pet-products { grid-template-columns:1fr; } .pet-offer-grid { grid-template-columns:1fr; } .pet-card { padding:22px; } .pet-product-art { height:150px; } .pet-cta { padding-bottom:60px; } .pet-cta-box { padding:30px 24px; align-items:flex-start; flex-direction:column; } .pet-footer-inner { align-items:flex-start; flex-direction:column; } }
       `}</style>
 
       <header className="pet-wrap pet-nav">
         <a className="pet-brand" href="#inicio" aria-label="Pata e Companhia, início">
-          <span className="pet-brand-mark">🐾</span><span>Pata <span style={{ color: "#39804e" }}>&</span> Companhia</span>
+          <span className="pet-brand-mark">🐾</span><span>Petshop <span style={{ color: "#39804e" }}>Pet</span> Mania</span>
         </a>
         <nav className="pet-links" aria-label="Navegação principal">
           <a href="#servicos">Serviços</a><a href="#loja">Loja pet</a><a href="#sobre">Sobre nós</a><a href="#duvidas">Dúvidas</a>
         </nav>
-        <a className="pet-btn" href={whatsappLink("Olá! Quero conhecer os produtos e serviços da Pata & Companhia.")} target="_blank" rel="noreferrer">Fale com a gente <span aria-hidden="true">↗</span></a>
+        <a className="pet-btn" href={whatsappLink("Olá! Quero conhecer os produtos e serviços da Petshop Pet Mania.")} target="_blank" rel="noreferrer">Fale com a gente <span aria-hidden="true">↗</span></a>
       </header>
 
       <section className="pet-hero" id="inicio">
@@ -144,7 +156,7 @@ function Index() {
       <section className="pet-section" id="sobre">
         <div className="pet-wrap pet-about">
           <div className="pet-about-art" aria-hidden="true">🐕‍🦺</div>
-          <div><span className="pet-eyebrow">Nossa essência</span><h2>Mais que cuidado. Uma relação de confiança.</h2><p>A Pata & Companhia nasceu da ideia de que cada pet merece atenção, respeito e muito amor. Queremos que você se sinta acolhido e que seu companheiro receba um cuidado feito com carinho.</p><ul className="pet-checks"><li><span>✓</span> Atendimento acolhedor para pets e tutores</li><li><span>✓</span> Atenção ao conforto e ao bem-estar</li><li><span>✓</span> Orientações claras para o dia a dia</li></ul><a className="pet-btn" href={whatsappLink("Olá! Gostaria de saber mais sobre a Pata & Companhia.")} target="_blank" rel="noreferrer">Vamos conversar <span aria-hidden="true">↗</span></a></div>
+          <div><span className="pet-eyebrow">Nossa essência</span><h2>Mais que cuidado. Uma relação de confiança.</h2><p>A Petshop Pet Mania nasceu da ideia de que cada pet merece atenção, respeito e muito amor. Queremos que você se sinta acolhido e que seu companheiro receba um cuidado feito com carinho.</p><ul className="pet-checks"><li><span>✓</span> Atendimento acolhedor para pets e tutores</li><li><span>✓</span> Atenção ao conforto e ao bem-estar</li><li><span>✓</span> Orientações claras para o dia a dia</li></ul><a className="pet-btn" href={whatsappLink("Olá! Gostaria de saber mais sobre a Petshop Pet Mania.")} target="_blank" rel="noreferrer">Vamos conversar <span aria-hidden="true">↗</span></a></div>
         </div>
       </section>
 
@@ -174,12 +186,12 @@ function Index() {
       <section className="pet-cta" id="contato">
         <div className="pet-wrap pet-cta-box">
           <div><h2>Pronto para cuidar ainda melhor do seu melhor amigo?</h2><p>Consulte opções, disponibilidade e valores pelo WhatsApp. <strong style={{ color: "#f6d7a7" }}>Contato fictício para demonstração.</strong></p></div>
-          <a className="pet-btn" href={whatsappLink("Olá! Quero saber mais sobre os produtos e serviços da Pata & Companhia.")} target="_blank" rel="noreferrer">Chamar no WhatsApp <span aria-hidden="true">↗</span></a>
+          <a className="pet-btn" href={whatsappLink("Olá! Quero saber mais sobre os produtos e serviços da Petshop Pet Mania.")} target="_blank" rel="noreferrer">Chamar no WhatsApp <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
       <footer className="pet-footer">
-        <div className="pet-wrap pet-footer-inner"><div><a className="pet-brand" href="#inicio"><span className="pet-brand-mark">🐾</span><span>Pata <span style={{ color: "#39804e" }}>&</span> Companhia</span></a><p>Feito com carinho para os melhores amigos.</p></div><span>© {new Date().getFullYear()} Pata & Companhia. Projeto demonstrativo · WhatsApp fictício.</span></div>
+        <div className="pet-wrap pet-footer-inner"><div><a className="pet-brand" href="#inicio"><span className="pet-brand-mark">🐾</span><span>Petshop <span style={{ color: "#39804e" }}>Pet</span> Mania</span></a><p>Feito com carinho para os melhores amigos.</p></div><span>© {new Date().getFullYear()} Petshop Pet Mania. Projeto demonstrativo · WhatsApp fictício.</span></div>
       </footer>
     </main>
   );
