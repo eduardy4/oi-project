@@ -84,7 +84,7 @@ function Index() {
         .pet-cta-box h2 { font-size:clamp(28px,3.5vw,40px); line-height:1.1; margin:0 0 10px; }
         .pet-cta-box p { color:#d1e2d2; margin:0; line-height:1.7; }
         .pet-cta-box .pet-btn { background:#d9efc8; color:#244f35!important; white-space:nowrap; }
-        .pet-faq { max-width:760px; margin:auto; display:grid; gap:12px; }
+        .pet-offer-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } .pet-offer { background:#fff; border:1px solid #e7eddf; border-radius:22px; padding:25px; display:flex; flex-direction:column; align-items:flex-start; box-shadow:0 8px 28px #263e2809; } .pet-offer-tag { background:#e7f3dd; color:#34734a; border-radius:999px; padding:7px 10px; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.06em; } .pet-offer h3 { font-size:22px; margin:16px 0 8px; } .pet-offer p { color:#6d7a70; font-size:14px; line-height:1.7; margin:0 0 20px; } .pet-offer .pet-btn { margin-top:auto; } .pet-faq { max-width:760px; margin:auto; display:grid; gap:12px; }
         .pet-faq details { background:white; border:1px solid #e9eee4; border-radius:16px; padding:18px 20px; }
         .pet-faq summary { cursor:pointer; font-weight:800; }
         .pet-faq details p { color:#6d7a70; line-height:1.7; font-size:14px; margin-bottom:0; }
@@ -93,7 +93,7 @@ function Index() {
         .pet-footer p { margin:6px 0 0; }
         .pet-footer a { color:#34734a; text-decoration:none; font-weight:800; }
         @media(max-width:850px) { .pet-links { gap:14px; } .pet-links a:not(.pet-btn) { display:none; } .pet-hero-grid { grid-template-columns:1fr; gap:15px; padding:52px 0 48px; } .pet-hero-art { min-height:340px; } .pet-art-circle { width:min(82%,370px); } .pet-cards { grid-template-columns:repeat(2,1fr); } .pet-about { grid-template-columns:1fr; gap:30px; } .pet-about-art { min-height:270px; } }
-        @media(max-width:560px) { .pet-wrap { width:calc(100% - 30px); } .pet-nav { min-height:68px; } .pet-brand { font-size:18px; } .pet-brand-mark { width:37px;height:37px; } .pet-nav > .pet-btn { padding:11px 13px; font-size:12px; } .pet-hero h1 { font-size:43px; } .pet-lead { font-size:15px; } .pet-hero-art { min-height:300px; } .pet-float-one { left:0;top:35px; } .pet-float-two { right:0;bottom:32px; } .pet-section { padding:60px 0; } .pet-cards,.pet-products { grid-template-columns:1fr; } .pet-card { padding:22px; } .pet-product-art { height:150px; } .pet-cta { padding-bottom:60px; } .pet-cta-box { padding:30px 24px; align-items:flex-start; flex-direction:column; } .pet-footer-inner { align-items:flex-start; flex-direction:column; } }
+        @media(max-width:560px) { .pet-wrap { width:calc(100% - 30px); } .pet-nav { min-height:68px; } .pet-brand { font-size:18px; } .pet-brand-mark { width:37px;height:37px; } .pet-nav > .pet-btn { padding:11px 13px; font-size:12px; } .pet-hero h1 { font-size:43px; } .pet-lead { font-size:15px; } .pet-hero-art { min-height:300px; } .pet-float-one { left:0;top:35px; } .pet-float-two { right:0;bottom:32px; } .pet-section { padding:60px 0; } .pet-cards,.pet-products { grid-template-columns:1fr; } .pet-offer-grid { grid-template-columns:1fr; } .pet-card { padding:22px; } .pet-product-art { height:150px; } .pet-cta { padding-bottom:60px; } .pet-cta-box { padding:30px 24px; align-items:flex-start; flex-direction:column; } .pet-footer-inner { align-items:flex-start; flex-direction:column; } }
       `}</style>
 
       <header className="pet-wrap pet-nav">
@@ -110,9 +110,9 @@ function Index() {
         <div className="pet-wrap pet-hero-grid">
           <div>
             <span className="pet-kicker">🐾 Amor que faz bem</span>
-            <h1>Seu pet merece uma vida <span>cheia de alegria.</span></h1>
-            <p className="pet-lead">Cuidado, carinho e tudo o que seu melhor amigo precisa — em um só lugar. Porque eles fazem parte da família.</p>
-            <div className="pet-actions"><a className="pet-btn" href="#servicos">Conheça nossos serviços <span aria-hidden="true">→</span></a><a className="pet-btn pet-btn-light" href="#sobre">Conheça a Pata & Companhia</a></div>
+            <h1>Tudo para seu pet viver <span>mais feliz.</span></h1>
+            <p className="pet-lead">Encontre cuidados, produtos e serviços pensados para o bem-estar do seu melhor amigo. Fale com a nossa equipe, tire suas dúvidas e descubra as melhores opções para o seu pet.</p>
+            <div className="pet-actions"><a className="pet-btn" href="#ofertas">Ver opções para meu pet <span aria-hidden="true">→</span></a><a className="pet-btn pet-btn-light" href="#contato">Consultar disponibilidade</a></div>
             <div className="pet-proof"><span className="pet-proof-icons" aria-hidden="true">🐶 🐱</span><span>Um cuidado especial para cada personalidade.</span></div>
           </div>
           <div className="pet-hero-art" aria-label="Ilustração decorativa de um cachorro feliz">
@@ -133,7 +133,7 @@ function Index() {
       <section className="pet-section pet-section-soft" id="loja">
         <div className="pet-wrap">
           <div className="pet-center"><span className="pet-eyebrow">Cantinho pet</span><h2>Pequenos mimos, grandes alegrias</h2><p>Uma seleção de itens para cuidar, brincar e compartilhar bons momentos com seu companheiro.</p></div>
-          <div className="pet-products">{products.map((product) => <article className="pet-product" key={product.name}><div className="pet-product-art" aria-hidden="true">{product.emoji}</div><div className="pet-product-info"><h3>{product.name}</h3><p>{product.category}</p></div></article>)}</div>
+          <div className="pet-products">{products.map((product) => <article className="pet-product" key={product.name}><div className="pet-product-art" aria-hidden="true">{product.emoji}</div><div className="pet-product-info"><h3>{product.name}</h3><p>{product.category}</p><a className="pet-btn" style={{ marginTop: 16 }} href="#contato">Consultar opções <span aria-hidden="true">→</span></a></div></article>)}</div>
         </div>
       </section>
 
@@ -141,6 +141,18 @@ function Index() {
         <div className="pet-wrap pet-about">
           <div className="pet-about-art" aria-hidden="true">🐕‍🦺</div>
           <div><span className="pet-eyebrow">Nossa essência</span><h2>Mais que cuidado. Uma relação de confiança.</h2><p>A Pata & Companhia nasceu da ideia de que cada pet merece atenção, respeito e muito amor. Queremos que você se sinta acolhido e que seu companheiro receba um cuidado feito com carinho.</p><ul className="pet-checks"><li><span>✓</span> Atendimento acolhedor para pets e tutores</li><li><span>✓</span> Atenção ao conforto e ao bem-estar</li><li><span>✓</span> Orientações claras para o dia a dia</li></ul><a className="pet-btn" href="#contato">Vamos conversar <span aria-hidden="true">→</span></a></div>
+        </div>
+      </section>
+
+
+      <section className="pet-section" id="ofertas">
+        <div className="pet-wrap">
+          <div className="pet-center"><span className="pet-eyebrow">Encontre o que precisa</span><h2>O cuidado ideal começa aqui</h2><p>Escolha por onde quer começar e fale com a equipe para conhecer as opções disponíveis para seu companheiro.</p></div>
+          <div className="pet-offer-grid">
+            <article className="pet-offer"><span className="pet-offer-tag">Bem-estar</span><h3>Cuidados para o dia a dia</h3><p>Converse com a equipe sobre higiene, rotina de cuidados e serviços que combinam com as necessidades do seu pet.</p><a className="pet-btn" href="#contato">Consultar serviços →</a></article>
+            <article className="pet-offer"><span className="pet-offer-tag">Diversão</span><h3>Produtos e acessórios</h3><p>Descubra opções de brinquedos, petiscos e acessórios para deixar a rotina mais divertida e confortável.</p><a className="pet-btn" href="#loja">Ver categorias →</a></article>
+            <article className="pet-offer"><span className="pet-offer-tag">Atendimento</span><h3>Ajuda para escolher</h3><p>Não sabe por onde começar? Conte o que seu pet precisa e tire suas dúvidas antes de decidir.</p><a className="pet-btn" href="#contato">Falar com a equipe →</a></article>
+          </div>
         </div>
       </section>
 
@@ -157,8 +169,8 @@ function Index() {
 
       <section className="pet-cta" id="contato">
         <div className="pet-wrap pet-cta-box">
-          <div><h2>Vamos cuidar de quem enche sua vida de amor?</h2><p>Entre em contato para saber mais sobre nossos serviços e produtos.</p></div>
-          <a className="pet-btn" href="mailto:contato@pataecompanhia.com?subject=Ol%C3%A1%2C%20quero%20saber%20mais">Entre em contato <span aria-hidden="true">↗</span></a>
+          <div><h2>Pronto para cuidar ainda melhor do seu melhor amigo?</h2><p>Consulte opções, disponibilidade e valores com a nossa equipe.</p></div>
+          <a className="pet-btn" href="mailto:contato@pataecompanhia.com?subject=Ol%C3%A1%2C%20quero%20saber%20mais">Quero saber mais <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
