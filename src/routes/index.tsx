@@ -5,13 +5,13 @@ export const Route = createFileRoute("/")({
 });
 
 // Add the real payment-provider URL here before publishing.
-const CHECKOUT_URL = "";
-const checkoutHref = CHECKOUT_URL || "#offer";
+const CHECKOUT_URL = "https://pay.cakto.com.br/37dht6v_1261733";
+const checkoutHref = CHECKOUT_URL;
 
 const recipes = [
-  { name: "Creamy Garlic Chicken", type: "Dinner", time: "25 min", image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85", description: "Tender chicken with a rich, creamy garlic sauce." },
-  { name: "Avocado Egg Salad", type: "Lunch", time: "10 min", image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&q=85", description: "A fresh, satisfying combination for busy days." },
-  { name: "Zucchini Noodle Bowl", type: "Light meal", time: "20 min", image: "https://images.unsplash.com/photo-1512621776951-a57141f2e394?auto=format&fit=crop&w=1000&q=85", description: "A colorful bowl packed with fresh ingredients." },
+  { name: "Creamy Garlic Chicken", type: "Dinner", time: "25 min", image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=85", description: "Tender chicken with a rich, creamy garlic sauce." },
+  { name: "Avocado Egg Salad", type: "Lunch", time: "10 min", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=85", description: "A fresh, satisfying combination for busy days." },
+  { name: "Zucchini Noodle Bowl", type: "Light meal", time: "20 min", image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=85", description: "A colorful bowl packed with fresh ingredients." },
 ];
 
 const benefits = [
@@ -126,7 +126,7 @@ function Index() {
             <div className="etrust"><span>✓</span><span><strong>One-time payment</strong> · Digital eBook · Read at your own pace</span></div>
           </div>
           <div className="evisual" aria-label="Digital low-carb recipe eBook preview">
-            <img className="evisual-photo" src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&q=85" alt="Fresh healthy meal bowl" />
+            <img className="evisual-photo" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=85" alt="Fresh healthy meal bowl" />
             <div className="ebook-cover"><span className="cover-small">A simple recipe collection</span><div><h2>15 Delicious<br/>Recipes for<br/>Losing Weight</h2><p>with Low Carb Diets</p></div><div className="cover-food">🥑</div><span className="cover-small">YOUR KITCHEN, MADE SIMPLE</span></div>
             <div className="efloat efloat-one">🌿 Simple meal inspiration</div><div className="efloat efloat-two">📘 Digital eBook</div>
           </div>
@@ -145,7 +145,7 @@ function Index() {
       </div></section>
 
       <section className="esection"><div className="ewrap eabout">
-        <div className="eabout-art"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85" alt="A table filled with fresh ingredients and colorful food" loading="lazy"/><span className="eabout-art-label">Simple ingredients. Delicious inspiration.</span></div>
+        <div className="eabout-art"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1400&q=85" alt="A table filled with fresh ingredients and colorful food" loading="lazy"/><span className="eabout-art-label">Simple ingredients. Delicious inspiration.</span></div>
         <div><span className="eyebrow">Your kitchen companion</span><h2>Make room for more delicious possibilities</h2><p>This digital guide is designed as an approachable starting point for anyone looking for low-carb recipe inspiration. Keep it handy on your phone, tablet, or computer and revisit it whenever you need a fresh idea.</p><ul className="echecks"><li><span>✓</span> A convenient digital format</li><li><span>✓</span> Inspiration for everyday meals</li><li><span>✓</span> A one-time price of $6.99</li></ul><a className="ebtn" href={checkoutHref}>Get the eBook — $6.99 →</a></div>
       </div></section>
 
@@ -153,7 +153,7 @@ function Index() {
         <div><span className="eyebrow">A little inspiration goes a long way</span><h2>Bring fresh ideas to your kitchen.</h2><p>Get the digital guide <em>15 Delicious Recipes for Losing Weight with Low Carb Diets</em> for one simple payment. No subscription is advertised.</p></div>
         <div className="eprice"><small>One-time payment</small><strong>$6.99</strong><a className="ebtn" href={checkoutHref}>Get instant access ↗</a></div>
       </div>
-      {!CHECKOUT_URL && <p className="e-note">Checkout connection pending: add your real payment link to CHECKOUT_URL before publishing.</p>}
+      
       </div></section>
 
       <section className="esection" id="faq"><div className="ewrap">
