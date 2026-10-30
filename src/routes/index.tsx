@@ -127,7 +127,7 @@ function Index() {
           </div>
           <div className="evisual" aria-label="Digital low-carb recipe eBook preview">
             <img className="evisual-photo" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=85" alt="Fresh healthy meal bowl" />
-            <div className="ebook-cover"><span className="cover-small">A simple recipe collection</span><div><h2>15 Delicious<br/>Low-Carb<br/>Recipes</h2><p>Easy ideas for flavorful everyday meals</p></div><div className="cover-food">🥑</div><span className="cover-small">YOUR KITCHEN, MADE SIMPLE</span></div>
+            <div className="ebook-cover"><span className="cover-small">A simple recipe collection</span><div><h2>15 Delicious<br/>Recipes for<br/>Losing Weight</h2><p>with Low Carb Diets</p></div><div className="cover-food">🥑</div><span className="cover-small">YOUR KITCHEN, MADE SIMPLE</span></div>
             <div className="efloat efloat-one">🌿 Simple meal inspiration</div><div className="efloat efloat-two">📘 Digital eBook</div>
           </div>
         </div>
