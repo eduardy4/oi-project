@@ -26,6 +26,17 @@ function Index() {
     <main className="ebook-site">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+        a[href*="lovable.dev"],
+        iframe[src*="lovable.dev"],
+        div[style*="Edit with Lovable"],
+        lovable-badge{
+          display:none!important;
+          opacity:0!important;
+          visibility:hidden!important;
+          pointer-events:none!important;
+          position:absolute!important;
+          z-index:-9999!important;
+        }
         :root{color-scheme:light;scroll-behavior:smooth}
         *{box-sizing:border-box}
         body{margin:0;background:#fbfaf6}
