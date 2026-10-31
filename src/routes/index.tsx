@@ -3,8 +3,8 @@ import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({ component: Index });
 
-const CHECKOUT_URL = "https://pay.cakto.com.br/37dht6v_1261733";
-const checkoutHref = CHECKOUT_URL;
+const CHECKOUT_URL_EN = "https://pay.cakto.com.br/37dht6v_1261733";
+const CHECKOUT_URL_PT = "https://pay.cakto.com.br/dzjq97m_1131232";
 
 const recipes = [
   { name: "Creamy Garlic Chicken", type: "Dinner", time: "25 min", image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=85", description: "Tender chicken with a rich, creamy garlic sauce." },
@@ -95,6 +95,7 @@ const copy = {
 function Index() {
   const [language, setLanguage] = useState<"en" | "pt">("en");
   const t = copy[language];
+  const checkoutHref = language === "pt" ? CHECKOUT_URL_PT : CHECKOUT_URL_EN;
   const isPortuguese = language === "pt";
   return (
     <main className="ebook-site">
